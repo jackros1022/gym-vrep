@@ -1,3 +1,28 @@
+OpenAI Gym 入门与提高（一） Gym环境构建与最简单的RL agent
+Openai gym是一个用于开发和比较RL算法的工具包，与其他的数值计算库兼容，如tensorflow或者theano库。现在主要支持的是python语言，以后将支持其他语言。gym文档在https://gym.openai.com/docs。
+
+Openai gym包含2部分：
+
+1、gym开源库：包含一个测试问题集，每个问题成为环境（environment），可以用于自己的RL算法开发。这些环境有共享的接口，允许用户设计通用的算法。其包含了deep mind 使用的Atari游戏测试床。
+
+2、Openai gym服务：提供一个站点和api允许用户对他们训练的算法进行性能比较。
+
+总之，openai gym 是一个RL算法的测试床（testbed）。
+
+在增强学习中有2个基本概念，一个是环境（environment），称为外部世界，另一个为智能体agent（写的算法）。agent发送action至environment，environment返回观察和回报。
+
+gym的核心接口是Env，作为统一的环境接口。Env包含下面几个核心方法：
+
+1、reset(self):重置环境的状态，返回观察。
+
+2、step(self,action):推进一个时间步长，返回observation，reward，done，info
+
+3、render(self,mode=’human’,close=False):重绘环境的一帧。默认模式一般比较友好，如弹出一个窗口。
+
+more…..
+
+了解更多内容请下载下面的pdf文档：
+
 # gym-vrep (WORK IN PROGRESS)
 OpenAI gym environment for V-REP. This environment should provide a serviceable baseline for any reinforcement learning ventures involving robots in V-REP. But you'll probably still have to configure the environment to your own needs, and potentially extend the base environment to encompass more V-REP functionality.
 
